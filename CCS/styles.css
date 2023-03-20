@@ -1,0 +1,379 @@
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 20px;
+
+  /* esto soluciona un problema de resposive pero agrega
+   barritas para desplazar en cada H 1, 2 y 3 que solucione
+    ocultando uno por uno con "overflow-y:hidden;" */
+    max-width: 100% !important;
+    overflow-x:hidden !important;
+}
+
+
+h2{
+    font-size: 2rem;
+    text-align: center;
+}
+
+/*Barra de inicio*/
+.header{
+    background-color: beige;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 85px;
+    padding: 5px 10%;
+    
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+
+    overflow-y:hidden;
+}
+.header .logo img{
+    height: 80px;
+    width: auto;
+    
+}
+
+.header .nav-links{
+    list-style: none;
+}
+.header .nav-links li{
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.header .nav-links li:hover{
+    transform: scale(1.1);
+}
+
+.header .nav-links a{
+    font-size: 700;
+    color: #000000;
+    text-decoration: none;
+}
+
+.header .nav-links li a:hover{
+    color: #ffbc0e;
+}
+
+@media screen and (max-width: 800px) {
+    .nav-links{
+        justify-content: center;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
+/*Informacion*/
+section#info{
+    background-color: lightgray;
+    
+    background: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)),
+    url("./1661787731_142433_1661787875_noticia_normal.jpg");
+    background-size: cover;
+    background-position: center center;
+    color: #fff;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding-top: 6rem;
+
+}
+
+section#info h1{
+    font-size: 3rem;
+
+    overflow-y:hidden;
+}
+
+section#info h2{
+    font-size: 2rem;
+
+    overflow-y:hidden;
+}
+
+
+
+.info-detail{
+    border: 3px solid black;
+    width: 300px;
+    height: 300px;
+    background-image: url(./foto-curriculum.webp);
+    background-size: cover;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.info-detail img{
+    width: 100%;
+}
+
+@media screen and (max-width: 430px) {
+    .info h1{
+        width: 75%;
+    }
+}
+
+/*Botones redes sociales*/
+.buttons{
+    min-width: 700px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.buttons a{
+    text-decoration: none;
+    font-size: 28px;
+    width: 60px;
+    height: 60px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    line-height: 60px;
+    text-align: center;
+    background: #314652;
+    color: #f1f1f1;
+    border-radius: 50%;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
+    transition: all .4s ease-in-out;
+}
+
+.buttons a:hover {
+    transform: scale(1.2);
+  }
+
+  @media screen and (max-width: 700px) {
+    .buttons{
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: center ;
+              
+    }
+  }
+
+/*Proyectos*/
+.projects-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.projecs-detail{
+    border: 10px solid rgba(0, 0, 0, 0.788);
+    border-radius: 15px;
+    width: 500px;
+    margin: 20px;
+}
+
+.projecs-detail img{
+    width: 100%;
+}
+
+#projects h2{
+    overflow-y:hidden;
+    padding-top: 1rem;
+}
+
+#projects h3{
+    overflow-y:hidden;
+}
+
+  /*contacto*/
+.contact {
+    background-color: #202020;
+    padding: 140px 0 100px 0;
+    color: #e6e6e6;
+    text-align: center;
+
+}
+
+.contact .contenido-seccion{
+    max-width: 1000px;
+    margin: auto;
+    padding: 0 10px;
+}
+
+.contact .contenido-seccion{
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.contact .contenido-seccion .fila{
+    display: flex;
+    justify-content: space-around;
+}
+
+.contact .contenido-seccion .fila .col{
+    margin-top: 50px;    
+}
+
+.contact .contenido-seccion .fila .col h2{
+    color:rgb(100, 44, 102)
+}
+
+#contact h2{
+    overflow-y:hidden;
+}
+
+#contact h3{
+    overflow-y:hidden;
+}
+
+/*Formulario*/
+.formulario {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 20px;
+}
+
+.formulario__label {
+	display: block;
+	font-weight: 700;
+	padding: 10px;
+	cursor: pointer;
+}
+
+.formulario__grupo-input {
+	position: relative;
+}
+
+.formulario__input {
+	width: 70%;
+	background: #fff;
+	border: 3px solid transparent;
+	border-radius: 3px;
+	height: 45px;
+	line-height: 45px;
+	padding: 0 40px 0 10px;
+	transition: .3s ease all;
+}
+
+.formulario__input:focus {
+	border: 3px solid #0075FF;
+	outline: none;
+	box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
+}
+
+.formulario__input-error {
+	font-size: 12px;
+	margin-bottom: 0;
+	display: none;
+}
+
+.formulario__input-error-activo {
+	display: block;
+}
+
+.formulario__validacion-estado {
+	position: absolute;
+	right: 10px;
+	bottom: 15px;
+	z-index: 100;
+	font-size: 16px;
+	opacity: 0;
+}
+
+.formulario__checkbox {
+	margin-right: 10px;
+}
+
+.formulario__grupo-terminos, 
+.formulario__mensaje,
+.formulario__grupo-btn-enviar {
+	grid-column: span 2;
+}
+
+.formulario__mensaje {
+	height: 45px;
+	line-height: 45px;
+	background: #F66060;
+	padding: 0 15px;
+	border-radius: 3px;
+	display: none;
+}
+
+.formulario__mensaje-activo {
+	display: block;
+}
+
+.formulario__mensaje p {
+	margin: 0;
+}
+
+.formulario__grupo-btn-enviar {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.formulario__btn {
+	height: 45px;
+	line-height: 45px;
+	width: 30%;
+	background: #000;
+	color: #fff;
+	font-weight: bold;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
+	transition: .1s ease all;
+}
+
+.formulario__btn:hover {
+	box-shadow: 3px 0px 30px rgba(163,163,163, 1);
+}
+
+.formulario__mensaje-exito {
+	font-size: 14px;
+	color: #119200;
+	display: none;
+}
+
+.formulario__mensaje-exito-activo {
+	display: block;
+}
+
+/* ----- -----  Estilos para Validacion ----- ----- */
+.formulario__grupo-correcto .formulario__validacion-estado {
+	color: #1ed12d;
+	opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__label {
+	color: #bb2929;
+}
+
+.formulario__grupo-incorrecto .formulario__validacion-estado {
+	color: #bb2929;
+	opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__input {
+	border: 3px solid #bb2929;
+} 
+
+@media screen and (max-width: 800px) {
+	.formulario {
+		grid-template-columns: 1fr;
+	}
+
+	.formulario__grupo-terminos, 
+	.formulario__mensaje,
+	.formulario__grupo-btn-enviar {
+		grid-column: 1;
+	}
+
+	.formulario__btn {
+		width: 80%;
+	}
+}
